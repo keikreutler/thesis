@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Ke:</title>
+    
+    <link href="styles/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="http://www.keikreutler.com/wp-content/uploads/2012/10/kk_favicon1.png"/>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+	</script>
+    
+    <script src="http://www.html5canvastutorials.com/libraries/kinetic-v3.4.3.js">
+    </script>
+    
+	<script type="text/javascript" src="scripts/jScrollPane.js">
+	</script>
+
+	<link rel="stylesheet" type="text/css" media="all" href="styles/jscrollpane.css" />
+
+	<script type="text/javascript" src="scripts/randomcontent.js">
+	</script>
+
+	<script src="processing/processing.js" type="text/javascript">
+	</script>
+	
+	<script type="text/javascript">
+		function getProcessingSketchID () { return 'kkreutler04erraticmotion'; }
+		function getProcessingSketchID () { return 'kkreutler02painting'; }
+	</script>
+	
+	
+	<script type="text/javascript">
+
+      function drawBackground(){
+
+		var canvas = document.getElementById('background');
+
+        if (canvas.getContext){
+          
+			//var ctx = canvas.get(0).getContext("2d");
+          	var ctx = canvas.getContext('2d');
+          	var pRed = "rgba(252, 96, 84, 0.5)";
+            var pYellow = "rgba(249, 255, 152, 0.5)";
+            var pLightGreen = "rgba(174, 242, 156, 0.5)";
+            var pMedGreen = "rgba(96, 195, 142, 0.5)";
+            var pDarkGreen = "rgba(0, 169, 136, 0.5)";
+            var pBlue = "rgb(2,104,115)";
+            var colors = [pRed, pYellow, pRed, pYellow, pLightGreen, pMedGreen, pDarkGreen];
+            var colorIndex = 0;
+            var numOfModules = 60.0;
+            var scale = 1400/numOfModules;
+              
+            for (var n = 0; n < 200; n++) {
+            ctx.fillStyle = colors[4];
+			ctx.rect(scale*(Math.round(Math.random() * (numOfModules + 1))),scale*(Math.round(Math.random() * (numOfModules))),scale,scale);
+			ctx.fill();
+			colorIndex++;
+			}	
+			
+        } else {
+          alert('You need Safari or Firefox 1.5+ to see this demo.');
+        }
+      }
+      
+    </script>
+
+    <script type="text/javascript">
+
+	function drawCircle(elemId, text) {
+		var canvas = document.getElementById(elemId);
+		var pages = ["creativeArtistsAgency","appCapture","uglyNewHouses","loversDiscourse","energyFade","SNAKEINTHEGRASS","littleRedRobinHood","noChair","growingUp","teorema","InSane","justWaves","blueWithoutBells","oneOrSeveral","symBiotic","inSpace"];
+		var currURL = document.URL;
+		
+        if (canvas.getContext){ 
+			//var ctx = canvas.get(0).getContext("2d");
+          	var ctx = canvas.getContext('2d');
+          	var pRed = "rgba(252, 96, 84, 0.5)";
+            var pYellow = "rgba(249, 255, 152, 0.5)";
+            var pLightGreen = "rgba(174, 242, 156, 0.5)";
+            var pMedGreen = "rgba(96, 195, 142, 0.5)";
+            var pDarkGreen = "rgba(0, 169, 136, 0.5)";
+            var pBlue = "rgb(2,104,115)";
+            var colors = [pRed, pYellow, pRed, pYellow, pLightGreen, pMedGreen, pDarkGreen];
+            var colorIndex = 0;
+            var numOfModules = 60.0;
+            var scale = 1400/numOfModules;
+            
+ 
+ 		if(currURL == 'http://kei.ourmachine.net#/'+pages[(elemId-1)]) {
+			ctx.clearRect (0,0,75,75);
+    		ctx.font = "12pt Geneva";
+			ctx.textAlign = "center";
+			ctx.fillStyle = 'rgb(252, 96, 84)';
+			ctx.fillText(text, 25, 29);
+		}
+		
+		else {
+            ctx.fillStyle = 'rgb(252, 96, 84)';
+            ctx.beginPath();
+			ctx.arc(25,25,25,0,Math.PI*2,true);
+			ctx.fill();
+			ctx.closePath();
+    		ctx.font = "12pt Geneva";
+			ctx.textAlign = "center";
+			ctx.fillStyle = 'white';
+			ctx.fillText(text, 25, 29);
+			}
+		}
+    }
+    
+    function drawCircles(){
+    	drawCircle('1','/');
+		drawCircle('2','"');
+		drawCircle('3','|');
+		drawCircle('4','@');
+		drawCircle('5','#');
+		drawCircle('6','*');
+		drawCircle('7','%');
+		drawCircle('8','~');
+		drawCircle('9','+');
+		drawCircle('10','`');
+		drawCircle('11','>');
+		drawCircle('12','{');
+		drawCircle('13','_');
+		drawCircle('14',')');
+		drawCircle('15','^');
+		drawCircle('16',',');
+		setTimeout('drawCircles()',500);
+    }
+    
+
+      
+    </script>
+
+</head>
+
+
+<body>
+
+<!-- Draw background and circles -->
+
+	<div id="circles_left">
+		<div class="nodes">
+			<a href="#/creativeArtistsAgency"><canvas id="1" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/appCapture"><canvas id="2" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/uglyNewHouses"><canvas id="3" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/loversDiscourse"><canvas id="4" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/energyFade"><canvas id="5" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/SNAKEINTHEGRASS"><canvas id="6" width="50" height="50">*</canvas></a>
+		</div>
+    
+		<div class="nodes">
+			<a href="#/littleRedRobinHood"><canvas id="7" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/noChair"><canvas id="8" width="50" height="50">*</canvas></a>
+		</div>
+	</div>
+	
+	<div id="circles_right">
+		<div class="nodes">
+			<a href="#/growingUp"><canvas id="9" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/teorema"><canvas id="10" width="50" height="50">*</canvas></a>
+		</div>
+	
+		<div class="nodes">
+			<a href="#/InSane"><canvas id="11" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/justWaves"><canvas id="12" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/blueWithoutBells"><canvas id="13" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/oneOrSeveral"><canvas id="14" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/symBiotic"><canvas id="15" width="50" height="50">*</canvas></a>
+		</div>
+		<div class="nodes">
+			<a href="#/justWaves"><canvas id="16" width="50" height="50">*</canvas></a>
+		</div>
+    </div>
+    
+    
+    <div id="background_bound">
+      <canvas id="background" width="1400" height="1200">*</canvas>
+    </div>
+
+
+
+<!-- Start steps -->
+
+	<div id="impress" class="impress-not-supported">
+	
+		<div class="fallback-message">
+			<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+			<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser. Upcoming version 10 of Internet Explorer <i>should</i> also handle it.</p>
+		</div>
+	
+		
+		<div id="creativeArtistsAgency" class="step processing">
+			<canvas id="kkreutler02painting" data-processing-sources="processing/kkreutler_02_painting.pde" width="417" height="420">
+						<p>Your browser does not support the canvas tag.</p>
+						<!-- Note: you can put any alternative content here. -->
+			</canvas>
+		</div>
+	
+	
+		<div id="appCapture" class="step text yellowbg" data-x="-250" data-y="-250" data-z="-1000">
+			<h2><a href="http://thepictorialact.tumblr.com/post/4011380352/apparatus-of-capture" target="_blank">Apparatus of Capture</a></h2>
+		
+			<p>As a continuation of the nature of the war machine, D&G look to the existence and functions of states. With two poles bonding and binding the state, of magician-emperor and jurist-priest, the magician-emperor operates by “captures” or “signs,” the other a force of “tools” (424). Beyond this mode, however, they look to the actual occurrence of states, as opposed to primitive peoples. Wishing to rid such an occasion of its evolutionary tracing — for history translates the “coexistence of becomings into a succession” — they posit the State apparatus as contemporaneous, existing as a function of threshold (430). Primitive societies thus have anticipatory-preventative forces which restrict the organization from reaching its limit. For capture, of the State, “proceeds by consolidating the diverse” (436). The State first stratifies a quantitatively comparable system — by overcoding land, assigning nominal wages and setting objective prices — and effectuating a monopolistic appropriation of such — the quality of land, surplus labor and real wages. Capture thus occurs between the comparison and appropriation, functioning as their “difference of power” and simultaneously “[constituting] the aggregate upon which it is effectuated” (446).
+	
+			<p>In this overcoding, specifically in the archaic Imperial State, however, certain flows become decoded, as a “flow that is no longer contained in its own code” and escapes (449). These decoded flows are oft (re)absorbed and organized through “processes of subjectification” (451). There are two binding poles in such a state of “machinic enslavement,” wherein the human functions as part of a machine, and “social subjection,” wherein the human is subject to an exterior object, its function that of action or usage (457). (There is a third age, echoing but transforming machinic enslavement, comprised of “human-machine-systems” defined by “mutual communication” and not usage (458).) In capitalism, property comes to intrinsically relate to rights; for it “no longer expresses the bond of personal dependence but the independence of a Subject that now constitutes the sole bond” (453). Thus we witness no longer a system of overcoding, but that of an “immanent axiomatic,” wherein capitalism simultaneously posits a “universal Subject” and “general Object” (454, 453). The contract, or subjectification, then becomes one between the self and the self, as both “subjected and sovereign,” a binding par excellence (460).
+		</div>
+	
+		
+		<div id="uglyNewHouses" class="step painting" data-x="250" data-y="-250" data-z="-200">
+			<img src="paintings/painting1.png">
+		</div>
+	
+	
+		<div id="loversDiscourse" class="step text medgreenbg" data-x="400" data-y="-400" data-z="-300">
+			<p>Rue du Cherche-Midi, after a difficult evening, X was explaining very carefully, his voice exact, his sentences well-formed, far from anything inexpressible, that sometimes he longed to swoon; he regretted never being able to disappear at will.
+	
+			<p>His words were saying that he meant then to succumb to his weakness, not to resist the wounds the world inflicted upon him; but at the same time he was substituting for this failing strength another strength, another affirmation: I assume toward and against everything a denial of courage, hence a denial of morality: that is what X’s voice was saying.
+			<h2>&#8212;Roland Barthes, A Lover’s Discourse</h2>
+		</div>
+	
+		
+		<div id="energyFade" class="step text medgreenbg" data-x="250" data-y="250">
+			Only if we are able to disentangle the future (the perception of the future, the concept of the future, and the very production of the future) from the traps of growth and investment will we find a way out of the vicious subjugation of life, wealth, and pleasure to the financial abstraction of semiocapital. The key to this disentanglement can be found in a new form of wisdom: harmonizing with exhaustion.
+	
+			<p>Energy is fading also because basic physical resources such as oil are doomed to extinction or dramatic depletion. And energy is fading because competition is stupid in the age of the general intellect. The general intellect is not based on juvenile impulse and male aggressiveness, on fighting, winning, and appropriation. It is based on cooperation and sharing.
+	
+			<h2><a href="http://www.e-flux.com/journal/the-future-after-the-end-of-the-economy/" target="_blank">&#8212;Franco Berardi Bifo, “The Future After the End of the Economy”</a></h2>
+		</div>
+		
+		
+		<div id="SNAKEINTHEGRASS" class="step processing" data-x="-300" data-y="-300">
+				<!--<canvas id="kkreutler08finalgame" data-processing-sources="processing/kkreutler_08_finalgame.pde" width="600" height="600"></canvas>-->
+		</div>
+	
+	
+		<div id="littleRedRobinHood" class="step painting" data-x="-250" data-y="-250" data-z="-200">
+				<img src="paintings/painting2.png">
+		</div>
+		
+		
+		<div id="noChair" class="step text yellowbg" data-x="-850" data-y="-650">
+			<h2><a href="http://thepictorialact.tumblr.com/post/11852637659/start-with-the-body-that-loses-its-chair" target="_blank">Start with the Body that Loses its Chair</a></h2>
+	
+			<p>In the the chapter, “The Orient and Other Others,” Ahmed employs the trope of the Orient/orientation to explore “lines” of race and genealogy. She first makes the distinction of orientation’s directionality: as that “toward” which we are oriented (7). In the case of the Orient, it becomes a direction toward that which is far, but in its designation of farness becomes within reachability — the strange made familiar in its nomination. Thus to be oriented toward something, visible in sight or in concept, does not prove only a negation and declaration of an otherness but becomes a form of extension: the “‘not me’ becomes incorporated into the body, extending its reach” (7). Yet in complimentary form, to be oriented “around” something makes “‘that thing’ binding, or to constitute oneself as that thing” (8). The dominant orientation “around” whiteness, then, inscribes another movement of “toward,” extending its reach to the other situated as the non-white.</p>
+			
+			<p>Collectives become through a “repetition of shared direction” (10). However, Ahmed points to a false causuality wherein community, designating “being in common,” generates “shared attributes,” which are then taken “retrospectively […] as evidence of community” (14). She writes: I would also argue here that likeness is an effect of proximity rather than its cause, with the additional claim that we inherit proximities—although this is an inheritance that can be refused and that does not fully determine a course of action. To suggest that we inherit proximities is also to point to how that past that is “behind” our arrival restricts as well as enables human action (15).</p>
+	
+			<p>Ahmed, then, takes up the issue of inheritance and ultimately of genealogy, but through a different framework than the strict transmission akin to Darwinism. Inheritance can be done, rather, in terms of “contingency and contact,” wherein the “likeness” of a family is enacted through closeness, and its lines of inheritance can serve to reflect back such (16). Proximity becomes an “ethical duty” (20). However, returning to the earlier line of thought, proximity as a duty does not necessarily mean to exclude the other (non-white); for “proximity to such others can even ‘confirm’ the whiteness of the body” (20).</p>
+		
+			<p>Yet for the non-white, orientation becomes a position of negation, to turn “backward on oneself,” a sort of arresting “amputation” (31). The habitual becomes that which extends the surfaces of our bodies, such as Merleau-Ponty’s walking stick, incorporated into movement as a conscious, yet seamless, appendage. To be situated around whiteness in relative “comfort,” the extension becomes habitual, only to be reinstated by the proximity of the other. Yet the designation of “not white” signifies the inheritance of “the failure of things to be habitual,” forcing the individual to “look behind,” rather than whiteness’ body which automatically “trails behind” (the stress in the elbows, the rest following) (34). </p>
+		
+			<p>Such “lines” of orientation, multiple and each category impacting the other, leave, however, space for potential action. As well as failed inheritances, there are “failed orientations, when bodies inhabit spaces that do not extend their shape” — “something happens other than the reproduction of matter” (39). Ahmed writes of “an orientation that unfolds between the gap between reception and possession” (46). From the perspective of a mixed-race individual, Ahmed draws attention to, not the crossing of mixed lines, but the failure of such lines to return and reflect their image. What, then, happens when we “no longer reproduce the lines we follow”? (47). For even situated comfortably around whiteness, “to move easily is not to move freely” (28).
+	
+			<p>Discomfort, in other words, allows things to move […] if we start with the body that loses its chair, the world we describe will be quite different (46).</p>
+		</div>
+		
+		
+		<div id="growingUp" class="step painting" data-x="-400" data-y="-400" data-z="-1000">
+			<img src="paintings/painting3.png">
+		</div>
+	
+	
+		<div id="teorema" class="step text medgreenbg" data-x="400" data-y="-400" data-z="-300">
+			“Cinema of cruelty, of which Artaud said that it ‘does not tell a story but develops a sequence of spiritual states which are deduced from one another as thought is deduced from thought.’ […] As Kierkegaard says, ‘the profound movements of the soul disarm psychology,’ precisely because they do not come from within. An author’s strength is measured by the way he is able to impose this problematic, uncertain and yet non-arbitrary point: grace or chance. […] What gives [the figures in Teorema] life is being the projections of an outside which makes them pass into each other, like conical projections or metamorphoses”
+			<h2>&#8212;Deleuze, Cinema 2</h2>
+		</div>
+	
+		<div id="InSane" class="step processing" data-x="500" data-y="400">
+			<canvas id="kkreutler04erraticmotion" data-processing-sources="processing/kkreutler_04_erraticmotion.pde" width="700" height="480">
+						<p>Your browser does not support the canvas tag.</p>
+						<!-- Note: you can put any alternative content here. -->
+			</canvas>
+		</div>
+		
+		<div id="justWaves" class="step painting" data-x="800" data-y="700"> 
+			<img src="images/JustWavesinSpace_beams.png">
+		</div>
+		
+		
+		<div id="blueWithoutBells" class="step painting" data-x="-500" data-y="500" data-z="-500">
+			<img src="paintings/painting6.png">
+		</div>
+		
+		
+		<div id="oneOrSeveral" class="step text medgreenbg" data-x="-500" data-y="-400">
+			<h2><a href="http://anexactgeologies.tumblr.com/post/18741416385/one-or-several-grids-a-reactionary-piece" target="_blank">One or several grids?</a></h2>
+		
+			<p>The grid becomes one of those unique — can this word apply? — structures whose evolution can relate to both the ideal and singular, the amorphous and the modular, according to situations in which it both is applied and applies itself. In Last Year at Marienbad, the persistence of several times, repetitious and previous, circumambulates and crosses this grid. But in this temporal segmentation, does the grid retain its spatial identity? Does it serve as the anchor, and in fact the condition, for a degree of atemporality? Could these disjointed scenes ever be conceived as such without a grid-like reference? As X+1 reverts to X-2, how are we to know? And perhaps it is the grid itself which constitutes the very possibility of the repetition and folding of time…
+	
+			<p>(1) Space is organized and understood through the grid. As Durer projects the grid onto space and perception, a creeping modern change echoes down the centuries, wherein the grid, at first, gives onto space. (2) The grid organizes space, the space of preexisting forms. The street maps wherein any form — Baroque, Classical, Byzantine — can arise within the grid; their outward, delineated forms the corollary (and only corollary) to the grid. (3) The grid becomes space, informs it. As missiles’ deceleration can be measured, the grid becomes turned on its Z-axis, insinuating itself in the emergent built forms. If everyday orientation would allow it, we’d see, not steeples nor domes, but a massive bar graph—a statistic of overbuilding or its limitations?
+	
+			<p>And then, finally, as we’re all still growing together, the grid serves as that form, molar and molecular, whose very implementation begets its transcendence. Explode the grid? OK, but the absence of Grid is still a grid—which we all really know. But do we really know the true amorphous nature of “Grid”—that as such it has always been as anything, and its permutations only speak to our developmental, vectoral speed? As Virilio writes, our speed has created an “artificial topological universe,” wherein space can be conceived merely as a “‘region’ in time.” This universe, this direct “encounter of every surface on the globe,” wherein the modularity of space becomes null, was in fact perpetuated by the grid itself: the consistent mapping and networking of spatial regions. The grid, in its linear and “rational” base flows, gives way to its own transcendence: rhizomatic linkages, deterritorialization. The contemporary “grid” thereby posits its own transcendence, to an implicit yet slow articulation to a grid beyond and yet constituted by the module.
+		</div>
+		
+	
+		<div id="symBiotic" class="step text greenbg" data-x="700" data-y="-700" data-z="-300">
+			<h2><a href="http://thepictorialact.tumblr.com/post/4911019307/parisis-information-trading-and-symbiotic" target="_blank">Parisi’s “Information Trading and Symbiotic Micropolitics”</a></h2>
+			
+			<p>Parisi engages with Deleuze and Guattari’s notion of “abstract materialism” wherein matter emerges and circulates in a “virtual-actual process of individuation” (26).* This engagement allows Parisi to suggest a “micropolitics of difference,” emphasizing not feminine identity, on a nature-culture continuum, but feminine desire as that of “potential mutations” (27). While Darwinism relies on filiative transmission and the “purposive notion of nature,” the theory of endosymbiosis presents a bacterial sex, based on “contagious transmission” rather than linear and common descent (27). Endosymbiosis describes bacteria’s ability to “transfer information across phyla without regard for such distinctions [between plant and animal kingdoms],” since such cells do not possess a bounded membrane nucleus. With such lateral transmission, “new compositions that do not resemble each of the parts from which they were generated” may emerge; unlike the Darwinian model wherein nature aims simply to complexify matter by gradual accumulation (an actual borne from the possible) (36). Parisi’s “abstract sex” presupposes “no teleological aim toward novelty” but assumes a “geological model” in which the biological and the technical function as material orders intensively related (40). Such a reading dismisses the biological function of gender; for reproductive sex acts as a threshold of change between the biocultural and the biophysical. Identity consists instead of a “continual feedback of relations between distinct levels of order, which are virtually linked insofar as they emerge from a material plane of potential variations” (43). The distribution of abstract materialism and symbiotic transmission, rather than the speciation of Neo-Darwinism, intensifies the capacity of open-ended bodies, which do not close but remain as partially actualized through the virtual.
+	
+			<p>*Odd that Parisi does not engage directly with Simondon’s “transduction” in the article.
+		</div>
+	
+		<div id="inSpace" class="step painting" data-x="1000" data-y="-900" data-z="-500">
+			<iframe src="http://player.vimeo.com/video/39904691?title=0&amp;byline=0&amp;portrait=0" width="400" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><p><a href="http://vimeo.com/39904691">"Just waves in space..."</a> from <a href="http://vimeo.com/user9789115">gamera</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+		</div>
+	
+	</div>
+	
+
+	
+
+	<script src="scripts/impress.js">
+	</script>
+	<script>impress();</script>
+	
+	
+	<script type="text/javascript">
+	
+		//randomize order of contents with DIV class="group1"
+		/*randomizeContent("text")
+		randomizeContent("processing")
+		randomizeContent("painting")*/
+	
+		$(function()
+		{
+			$('.scroll-pane').jScrollPane();
+		});
+	
+		drawCircles();
+	
+	
+		drawBackground();
+	
+	</script>
+	
+	</script>
+
+</body>
+</html>

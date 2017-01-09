@@ -1,0 +1,10 @@
+
+RewriteEngine on
+
+# Use PHP5.4 as default
+AddHandler application/x-httpd-php54 .php
+
+RewriteCond %{HTTP_HOST} ^thesis\.keikreutler\.cc$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.thesis\.keikreutler\.cc$
+RewriteRule ^/?$ "http\:\/\/www\.keikreutler\.com\/portfolio\/interface\-aesthetics\/" [R=301,L]
+
